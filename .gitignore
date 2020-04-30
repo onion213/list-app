@@ -1,0 +1,5 @@
+#node.jsの設定フォルダ以下の全ファイル
+/node_modules/
+
+#環境変数ファイル
+/params.json

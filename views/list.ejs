@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <header>
+        <meta charset="utf-8">
+        <title>LIST APP</title>
+        <link rel="stylesheet" href="/public/css/style.css">
+    </header>
+    <body>
+        <head class="head-banner"></head>
+        <h1>Your List</h1>
+        <a href="/add">Add new item</a>
+        <span>ID</span>
+        <span>Content</span>
+        <ul>
+            <% items.forEach((item) => { %>
+            <li>
+                <span><%= item.id %></span>
+                <span><%= item.content %></span>
+                <a href="/update/<%= item.id %>">編集</a>
+                <form action="/delete/<%= item.id %>" method="post" style="display:inline;">
+                    <input type="submit" value="削除">
+                </form>
+            </li>
+            <% }); %>
+        </ul>
+    </body>
+</html>
