@@ -1,27 +1,37 @@
 <!DOCTYPE html>
 <html>
-    <header>
+    <head>
         <meta charset="utf-8">
         <title>LIST APP</title>
-        <link rel="stylesheet" href="/public/css/style.css">
-    </header>
+        <link rel="stylesheet" href="css/style.css">
+    </head>
     <body>
-        <head class="head-banner"></head>
-        <h1>Your List</h1>
-        <a href="/add">Add new item</a>
-        <span>ID</span>
-        <span>Content</span>
-        <ul>
-            <% items.forEach((item) => { %>
-            <li>
-                <span><%= item.id %></span>
-                <span><%= item.content %></span>
-                <a href="/update/<%= item.id %>">編集</a>
-                <form action="/delete/<%= item.id %>" method="post" style="display:inline;">
-                    <input type="submit" value="削除">
-                </form>
-            </li>
-            <% }); %>
-        </ul>
+        <header>
+            <div class="container header">
+                <p class="logo">LIST APP</p>
+            </div>
+        </header>
+        <div class="main-wrapper">
+            <div class="container main-top">
+                <p class="main-top-title">Your List</p>
+                <a href="/add" class="btn">Add new item</a>
+            </div>
+            <div class="container main-content">
+                <span class="table-title table-col-id">ID</span>
+                <span class="table-title table-col-content">Content</span>
+                <ul>
+                    <% items.forEach((item) => { %>
+                    <li class="table-row">
+                        <span class="table-col-id"><%= item.id %></span>
+                        <span class="table-col-content"><%= item.content %></span>
+                        <a href="/update/<%= item.id %>" class="btn-small">編集</a>
+                        <form action="/delete/<%= item.id %>" method="post" style="display:inline;">
+                            <input type="submit" value="削除" class="btn-small">
+                        </form>
+                    </li>
+                    <% }); %>
+                </ul>
+            </div>
+        </div>
     </body>
 </html>
